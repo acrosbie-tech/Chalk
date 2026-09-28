@@ -23,6 +23,7 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/lib ./lib
 COPY --from=builder /app/data ./data
+RUN chown -R node:node /app/data
 
 USER node
 EXPOSE 3000
