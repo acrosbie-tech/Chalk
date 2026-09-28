@@ -27,4 +27,4 @@ RUN chown -R node:node /app/data
 
 USER node
 EXPOSE 3000
-CMD ["node", "server.js"]
+CMD ["sh", "-c", "HOSTNAME=0.0.0.0 node server.js"]
